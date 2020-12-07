@@ -10,9 +10,6 @@ import Footer from '../components/UI/Footer/Footer';
 
 const Home: FunctionComponent = () => (
   <Root>
-    <Head>
-      <title>Home | commerce</title>
-    </Head>
     <HeroSection />
     <HomeBanner />
     <CategoryBanner />

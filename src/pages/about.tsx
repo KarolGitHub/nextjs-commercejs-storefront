@@ -4,7 +4,7 @@ import Root from '../components/UI/Root/Root';
 
 const About = () => (
   <Root>
-    <h2>Commerce.js Demo Store</h2>
+    <h2>Storefront built with Next.js and Commerce.js</h2>
     <Footer />
   </Root>
 );

@@ -9,10 +9,11 @@ const images = [
 ];
 const HeroSection: FunctionComponent = () => {
   return (
-    <div className="hero-section position-relative">
+    <div>
       {images.map((image) => (
         <div key={image}>
           <div
+            className="bg-cover"
             style={{
               backgroundImage: `url("${image}")`,
             }}>
