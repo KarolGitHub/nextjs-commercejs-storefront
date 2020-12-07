@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import Swiper from 'react-id-swiper';
 
@@ -24,7 +24,7 @@ const images = [
   '/images/home-3.jpg',
   '/images/home-4.jpg',
 ];
-const HeroSection: FunctionComponent = () => {
+const HeroSection: React.FC = () => {
   return (
     <div className="relative">
       <Swiper {...params}>

@@ -1,16 +1,16 @@
-import React, { FunctionComponent, useRef } from 'react';
+import React, { useRef } from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
 import { useCategories } from '../../contexts/categories-context';
 import { useProducts } from '../../contexts/products-context';
 
-const Collections: FunctionComponent = () => {
-  const { categories }: any = useCategories();
-  const { products }: any = useProducts();
-  const sidebar = useRef<any>();
-  const page = useRef<any>();
+const Collections: React.FC = () => {
+  const { categories } = useCategories();
+  const { products } = useProducts();
+  const sidebar = useRef<HTMLDivElement>(null);
+  const page = useRef<HTMLDivElement>(null);
 
-  const Sidebar = categories?.map((category: any) => (
+  const Sidebar = categories?.map((category: Category) => (
     <div key={category.id}>
       <p>{category.name}</p>
       <Link href={`/collection#${category.slug}`}>
@@ -24,14 +24,16 @@ const Collections: FunctionComponent = () => {
     </div>
   ));
 
-  const filterProductsByCat = (catSlug: any) => {
-    const cat = categories?.find((category: any) => category.slug === catSlug);
+  const filterProductsByCat = (catSlug: string) => {
+    const cat = categories?.find(
+      (category: Category) => category.slug === catSlug
+    );
     if (!cat) {
       return [];
     }
-    return products?.filter((product: any) =>
+    return products?.filter((product: Product) =>
       product.categories.find(
-        (productCategory: any) => productCategory.id === cat.id
+        (productCategory: Category) => productCategory.id === cat.id
       )
     );
   };
@@ -41,11 +43,11 @@ const Collections: FunctionComponent = () => {
 
     return (
       <div>
-        {categories?.map((category: any) => (
+        {categories?.map((category: Category) => (
           <div key={category.id}>
             <p id={category.slug}>{category.name}</p>
             <div>
-              {filterProductsByCat(category.slug).map((product: any) => (
+              {filterProductsByCat(category.slug).map((product: Product) => (
                 <div key={product.id}>
                   <Link
                     href="/product/[permalink]"

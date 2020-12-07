@@ -1,10 +1,10 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 import { useProducts } from '../../contexts/products-context';
 
-const ProductsBanner: FunctionComponent = () => {
-  const { products }: any = useProducts();
+const ProductsBanner: React.FC = () => {
+  const { products } = useProducts();
   const reg = /(<([^>]+)>)/gi;
   return (
     <div>
@@ -18,10 +18,7 @@ const ProductsBanner: FunctionComponent = () => {
         </Link>
       </div>
       {products?.map(
-        (
-          { id, permalink, media, name, price, description }: any,
-          index: number
-        ) => (
+        ({ id, permalink, media, name, price, description }: Product) => (
           <div key={id}>
             <Link href="/product/[permalink]" as={`/product/${permalink}`}>
               <a>

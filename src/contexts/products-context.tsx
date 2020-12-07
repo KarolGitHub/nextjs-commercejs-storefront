@@ -1,10 +1,17 @@
 import React, { useContext } from 'react';
 
-export const ProductsContext = React.createContext<any>({ products: [] });
+export const ProductsContext = React.createContext<{ products: Product[] }>({
+  products: [],
+});
 
 export const useProducts = () => useContext(ProductsContext);
 
-export const ProductsProvider = ({ products, children }: any) => {
+type Props = {
+  products: Product[];
+  children: React.ReactNode;
+};
+
+export const ProductsProvider = ({ products, children }: Props) => {
   return (
     <ProductsContext.Provider value={{ products }}>
       {children}

@@ -4,7 +4,7 @@ import Root from '../components/UI/Root/Root';
 import Footer from '../components/UI/Footer/Footer';
 import Collections from '../components/collections/collections';
 
-const Home = () => (
+const Home: React.FC = () => (
   <Root>
     <Head>
       <title>Collection</title>

@@ -31,9 +31,11 @@ module.exports = {
         'prettier/@typescript-eslint', // Disable ESLint rules from @typescript-eslint/eslint-plugin that would conflict with prettier
         'plugin:prettier/recommended', // Displays prettier errors as ESLint errors. Should be the last configuration in the extends array.
       ],
+
       rules: {
         '@typescript-eslint/explicit-function-return-type': 'off',
         '@typescript-eslint/explicit-module-boundary-types': 'off',
+        'prettier/prettier': 'off',
         '@typescript-eslint/no-parameter-properties': [
           'error',
           { allows: ['public readonly'] },
@@ -57,6 +59,8 @@ module.exports = {
             ignoreRestSiblings: true,
           },
         ],
+        'react/prop-types': 0,
+        '@typescript-eslint/no-explicit-any': 'off',
       },
     },
   ],

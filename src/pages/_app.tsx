@@ -27,7 +27,7 @@ const links = () => [ViewportMetaLink(), TitleLink()];
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }: any) {
     const categoriesResponse = await commerce.categories.list();
-    const categories = categoriesResponse.data.map((item: any) => ({
+    const categories = categoriesResponse.data.map((item: Category) => ({
       ...collections.find((data) => data.slug === item.slug),
       ...item,
     }));

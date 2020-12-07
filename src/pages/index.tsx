@@ -1,5 +1,4 @@
-import React, { FunctionComponent } from 'react';
-import Head from 'next/head';
+import React from 'react';
 
 import HeroSection from '../components/homepage/hero-section';
 import HomeBanner from '../components/homepage/home-banner';
@@ -8,7 +7,7 @@ import ProductsBanner from '../components/homepage/products-banner';
 import Root from '../components/UI/Root/Root';
 import Footer from '../components/UI/Footer/Footer';
 
-const Home: FunctionComponent = () => (
+const Home: React.FC = () => (
   <Root>
     <HeroSection />
     <HomeBanner />

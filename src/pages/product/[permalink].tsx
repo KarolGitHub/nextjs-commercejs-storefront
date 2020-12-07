@@ -1,6 +1,6 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
 
-const Product: FunctionComponent = () => {
+const Product: React.FC = () => {
   return <div></div>;
 };
 

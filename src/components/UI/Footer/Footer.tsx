@@ -1,6 +1,6 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
 
-const Footer: FunctionComponent = () => {
+const Footer: React.FC = () => {
   return (
     <footer>
       Site developed by Karol Gardyjas&copy;{' '}
