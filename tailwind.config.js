@@ -26,9 +26,6 @@ module.exports = {
       regular: ['Quicksand', ...defaultTheme.fontFamily.sans],
       header: ['Luckiest Guy', ...defaultTheme.fontFamily.sans],
     },
-    boxShadow: {
-      '3xl': '13px 7px 20px 15px rgba(88, 83, 83, 0.75)',
-    },
     screens: {
       sm: '640px',
       md: '768px',
@@ -43,5 +40,15 @@ module.exports = {
         speed: '500ms',
       },
     }),
+    minHeight: {
+      0: '0',
+      '1/4': '25vh',
+      '1/2': '50vh',
+      '3/4': '75vh',
+      full: '100vh',
+    },
+    boxShadow: {
+      '3xl': '13px 7px 20px 15px rgba(88, 83, 83, 0.75)',
+    },
   },
 };

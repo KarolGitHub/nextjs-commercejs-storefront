@@ -1,8 +1,11 @@
 import App from 'next/app';
 import Head from 'next/head';
 import React from 'react';
+
 import '../global/tailwind.css';
+import 'swiper/css/swiper.css';
 import 'tailwindcss/tailwind.css';
+
 import commerce from '../lib/commerce';
 import collections from '../lib/collections';
 import { CategoriesProvider } from '../contexts/categories-context';

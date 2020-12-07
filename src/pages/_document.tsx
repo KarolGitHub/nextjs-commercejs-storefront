@@ -7,14 +7,15 @@ import Document, {
   DocumentContext,
 } from 'next/document';
 
-const IconLink = () => <link rel="icon" href="/favicon.png" />;
+const IconLink = () => <link key="icon" rel="icon" href="/favicon.png" />;
 
 const OG_TitleMetaLink = () => (
-  <meta property="og:title" content="Commerce.js | storefront" />
+  <meta key="og:title" property="og:title" content="Commerce.js | storefront" />
 );
 
 const OG_DescriptionMetaLink = () => (
   <meta
+    key="og:description"
     property="og:description"
     content="Storefront built with Next.js and Commerce.js"
   />
@@ -55,12 +56,14 @@ const TwitterCardMetaLink = () => (
 );
 const LuckiestGuyFontLink = () => (
   <link
+    key="luckiestguy"
     href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap"
     rel="stylesheet"
   />
 );
 const QuickSandFontLink = () => (
   <link
+    key="quicksand"
     href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap"
     rel="stylesheet"></link>
 );

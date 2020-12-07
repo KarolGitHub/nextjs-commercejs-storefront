@@ -7,7 +7,7 @@ module.exports = {
       jsx: true,
     },
   },
-  plugins: ['react-hooks', 'emotion'],
+  plugins: ['react-hooks'],
   // Javascript configuration
   extends: [
     'plugin:prettier/recommended', // Displays prettier errors as ESLint errors. Should be the last configuration in the extends array.
@@ -33,6 +33,7 @@ module.exports = {
       ],
       rules: {
         '@typescript-eslint/explicit-function-return-type': 'off',
+        '@typescript-eslint/explicit-module-boundary-types': 'off',
         '@typescript-eslint/no-parameter-properties': [
           'error',
           { allows: ['public readonly'] },
