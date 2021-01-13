@@ -26,12 +26,12 @@ const images = [
 ];
 const HeroSection: React.FC = () => {
   return (
-    <div className="relative">
+    <div className="relative -top-20">
       <Swiper {...params}>
         {images.map((image) => (
           <div key={image}>
             <div
-              className="bg-cover bg-center min-h-3/4"
+              className="bg-cover bg-center min-h-3/4 flex items-center justify-center flex-col py-5"
               style={{
                 backgroundImage: `url("${image}")`,
               }}>

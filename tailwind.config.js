@@ -17,11 +17,7 @@ module.exports = {
     spinner: ['responsive'],
   },
   plugins: [require('tailwindcss-debug-screens')],
-  important: true,
   theme: {
-    backgroundColor: (theme) => ({
-      ...theme('colors'),
-    }),
     fontFamily: {
       regular: ['Quicksand', ...defaultTheme.fontFamily.sans],
       header: ['Luckiest Guy', ...defaultTheme.fontFamily.sans],

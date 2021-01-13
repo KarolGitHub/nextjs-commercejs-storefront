@@ -7,14 +7,16 @@ import ProductsBanner from '../components/homepage/products-banner';
 import Root from '../components/UI/Root/Root';
 import Footer from '../components/UI/Footer/Footer';
 
-const Home: React.FC = () => (
-  <Root>
-    <HeroSection />
-    <HomeBanner />
-    <CategoryBanner />
-    <ProductsBanner />
-    <Footer />
-  </Root>
-);
+const Home: React.FC = () => {
+  return (
+    <Root>
+      <HeroSection />
+      <HomeBanner />
+      <CategoryBanner />
+      <ProductsBanner />
+      <Footer />
+    </Root>
+  );
+};
 
 export default Home;
