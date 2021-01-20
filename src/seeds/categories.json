@@ -1,14 +1,18 @@
 [
   {
-    "slug": "facial-products",
-    "name": "Facial Products"
+    "slug": "electronics",
+    "name": "Electronics"
   },
   {
-    "slug": "hair-products",
-    "name": "Hair Products"
+    "slug": "console-games",
+    "name": "Console Games"
   },
   {
-    "slug": "body-products",
-    "name": "Body Products"
+    "slug": "pc-games",
+    "name": "PC Games"
+  },
+  {
+    "slug": "featured-products",
+    "name": "Featured Products"
   }
 ]

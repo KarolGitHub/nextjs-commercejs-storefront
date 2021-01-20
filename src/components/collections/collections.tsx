@@ -24,7 +24,7 @@ const Collections: React.FC = () => {
     </div>
   ));
 
-  const filterProductsByCat = (catSlug: string) => {
+  const filterProductsByCategory = (catSlug: string) => {
     const cat = categories?.find(
       (category: Category) => category.slug === catSlug
     );
@@ -47,22 +47,24 @@ const Collections: React.FC = () => {
           <div key={category.id}>
             <p id={category.slug}>{category.name}</p>
             <div>
-              {filterProductsByCat(category.slug).map((product: Product) => (
-                <div key={product.id}>
-                  <Link
-                    href="/product/[permalink]"
-                    as={`/product/${product.permalink}`}>
-                    <div
-                      style={{
-                        background: `url("${product.media.source}") center center/cover`,
-                      }}>
-                      <p>{product.name}</p>
-                      <p>{product.description.replace(reg, '')}</p>
-                      <p>{product.price.formatted_with_symbol}</p>
-                    </div>
-                  </Link>
-                </div>
-              ))}
+              {filterProductsByCategory(category.slug).map(
+                (product: Product) => (
+                  <div key={product.id}>
+                    <Link
+                      href="/product/[permalink]"
+                      as={`/product/${product.permalink}`}>
+                      <div
+                        style={{
+                          background: `url("${product.media.source}") center center/cover`,
+                        }}>
+                        <p>{product.name}</p>
+                        <p>{product.description.replace(reg, '')}</p>
+                        <p>{product.price.formatted_with_symbol}</p>
+                      </div>
+                    </Link>
+                  </div>
+                )
+              )}
             </div>
           </div>
         ))}

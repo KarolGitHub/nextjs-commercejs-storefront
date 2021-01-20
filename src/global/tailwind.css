@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.link-underline {
-  @apply -mb-2 border-b-2;
-}
-
 body {
   @apply text-lg;
   @apply font-regular;
@@ -32,7 +28,7 @@ p > a {
 
 li > a:hover,
 p > a:hover {
-  @apply text-black;
+  @apply opacity-70;
 }
 
 p > ul {
@@ -47,6 +43,15 @@ ul,
 ol {
   @apply mb-8;
 }
+
+.content-area {
+  max-height: calc(100vh - theme('spacing.48'));
+  min-height: calc(100vh - theme('spacing.48'));
+}
+
+.link-underline {
+  @apply -mb-2 border-b-2;
+}
 .logo-container {
   @apply flex items-center static top-1/2 left-1/2 transform-none sm:transform sm:-translate-y-2/4 sm:-translate-x-2/4 sm:absolute;
 }
@@ -54,12 +59,29 @@ ol {
   @apply bg-white border-black transition-colors duration-200 ease-in-out delay-200 !important;
 }
 
+.button {
+  @apply flex items-center text-center bg-transparent border border-white w-max py-3 px-3 text-white;
+  text-shadow: 1px 1px 3px rgba(33, 33, 33, 0.5);
+}
+
 .button-icon {
   display: flex;
   justify-content: center;
 }
 
-.content-area {
-  max-height: calc(100vh - theme('spacing.48'));
-  min-height: calc(100vh - theme('spacing.48'));
+.swiper-button-prev {
+  @apply hidden sm:flex !important;
+}
+
+.swiper-button-next {
+  @apply hidden sm:flex !important;
+}
+
+.swiper-content {
+  @apply text-left;
+}
+
+.swiper-content li {
+  @apply text-white;
+  text-shadow: 0 0 6px #000;
 }
