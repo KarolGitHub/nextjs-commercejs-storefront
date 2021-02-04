@@ -70,11 +70,13 @@ ol {
 }
 
 .swiper-button-prev {
-  @apply hidden sm:flex !important;
+  @apply flex sm:hidden !important;
+  text-shadow: 1px 1px 3px rgba(33, 33, 33, 0.8);
 }
 
 .swiper-button-next {
-  @apply hidden sm:flex !important;
+  @apply flex sm:hidden !important;
+  text-shadow: 1px 1px 3px rgba(33, 33, 33, 0.8);
 }
 
 .swiper-content {

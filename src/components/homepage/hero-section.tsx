@@ -87,14 +87,14 @@ const HeroSection: React.FC = () => {
                   ...defaultStyle,
                   ...transitionStyles[state],
                 }}>
-                <ul className="swiper-content">
-                  <li className="text-2xl sm:text-4xl md:text-5xl font-extrabold uppercase">
+                <ul className="swiper-content max-w-xs">
+                  <li className="text-xl sm:text-2xl md:text-3xl font-extrabold uppercase">
                     <h3>{product.name}</h3>
                   </li>
-                  <li className="text-xl sm:text-2xl md:text-3xl font-semibold">
+                  <li className="text-lg sm:text-xl md:text-2xl font-semibold">
                     <h2>{product.description.replace(reg, '')}</h2>
                   </li>
-                  <li className="text-lg sm:text-xl md:text-2x1 font-bold">
+                  <li className="text-base sm:text-lg md:text-xl font-bold">
                     <h1>{product.price.formatted_with_symbol}</h1>
                   </li>
                 </ul>
@@ -151,7 +151,7 @@ const HeroSection: React.FC = () => {
   }, []);
 
   return (
-    <div className="relative -top-20">
+    <div className="relative -top-14">
       <Swiper {...params} getSwiper={initSwiperEventListeners}>
         {swiperCollection()}
       </Swiper>

@@ -65,7 +65,7 @@ const Header: React.FC = () => {
     <header
       ref={(el: HTMLElement) => (headerRef.current = el)}
       className="sticky top-0 left-0 right-0 font-semibold z-10 bg-transparent border-b border-solid border-transparent">
-      <div className="flex justify-between px-6 py-4 sm:px-12 sm:py-6">
+      <div className="flex justify-between px-6 py-2 sm:px-12 sm:py-3">
         <div className="logo-container">
           <img
             src={`/icon/${isMobileMenuOpen ? 'cross' : 'menu'}.svg`}
