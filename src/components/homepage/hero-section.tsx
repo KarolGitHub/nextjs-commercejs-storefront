@@ -27,21 +27,18 @@ const transitionStyles: any = {
   },
 };
 
-const params = {
+const swiperParams = {
   slidesPerView: 1,
   centeredSlides: true,
   speed: 1000,
   effect: 'fade',
+  allowTouchMove: false,
   fadeEffect: {
     crossFade: true,
   },
   autoplay: {
     delay: 5000,
     disableOnInteraction: false,
-  },
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
   },
   navigation: {
     nextEl: '.swiper-button-next',
@@ -152,7 +149,7 @@ const HeroSection: React.FC = () => {
 
   return (
     <div className="relative -top-14">
-      <Swiper {...params} getSwiper={initSwiperEventListeners}>
+      <Swiper {...swiperParams} getSwiper={initSwiperEventListeners}>
         {swiperCollection()}
       </Swiper>
     </div>

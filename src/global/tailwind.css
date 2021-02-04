@@ -70,13 +70,20 @@ ol {
 }
 
 .swiper-button-prev {
-  @apply flex sm:hidden !important;
+  @apply flex;
   text-shadow: 1px 1px 3px rgba(33, 33, 33, 0.8);
 }
 
 .swiper-button-next {
-  @apply flex sm:hidden !important;
+  @apply flex;
   text-shadow: 1px 1px 3px rgba(33, 33, 33, 0.8);
+}
+
+.swiper-pagination-bullets {
+  @apply bottom-0 !important;
+}
+.swiper-pagination-bullet {
+  @apply rounded-none text-blue-500 !important;
 }
 
 .swiper-content {
