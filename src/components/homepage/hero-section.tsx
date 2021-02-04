@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
-import Swiper from 'react-id-swiper';
+import Swiper, { SwiperInstance } from 'react-id-swiper';
 import { Transition } from 'react-transition-group';
 import { useCategories } from '../../contexts/categories-context';
 import { useProducts } from '../../contexts/products-context';
@@ -54,7 +54,7 @@ const HeroSection: React.FC = () => {
   const { products } = useProducts();
 
   const [transitionIn, setTransitionIn] = useState<boolean>(true);
-  const swiperRef = useRef<any>(null);
+  const swiperRef = useRef<SwiperInstance>(null);
 
   const filterFeaturedProducts = () => {
     const featured = categories?.find(
@@ -113,7 +113,19 @@ const HeroSection: React.FC = () => {
     ));
   };
 
-  const initSwiperEventListeners = (swiperInstance: any) => {
+  const scrollHandler = (entries: IntersectionObserverEntry[]) => {
+    if (swiperRef) {
+      const ratio = entries[entries.length - 1].intersectionRatio;
+      const isSwiperAutoplay = swiperRef.current.autoplay.running;
+      if (isSwiperAutoplay && ratio < 0.5) {
+        swiperRef.current.autoplay.stop();
+      } else if (!isSwiperAutoplay && ratio >= 0.5) {
+        swiperRef.current.autoplay.start();
+      }
+    }
+  };
+
+  const initSwiperEventListeners = (swiperInstance: SwiperInstance) => {
     swiperRef.current = swiperInstance;
     swiperRef.current.on('slideChangeTransitionEnd', () =>
       setTransitionIn(true)
@@ -121,15 +133,22 @@ const HeroSection: React.FC = () => {
     swiperRef.current.on('slideChange', () => setTransitionIn(false));
   };
 
-  useEffect(
-    () => () => {
+  useEffect(() => {
+    const observer = new window.IntersectionObserver(scrollHandler, {
+      rootMargin: '0px 0px 0px -80px',
+      threshold: 0.5,
+    });
+    if (swiperRef.current) {
+      observer.observe(swiperRef.current.el);
+    }
+    return () => {
+      observer.disconnect();
       swiperRef.current.off('slideChangeTransitionEnd', () =>
         setTransitionIn(true)
       );
       swiperRef.current.off('slideChange', () => setTransitionIn(false));
-    },
-    []
-  );
+    };
+  }, []);
 
   return (
     <div className="relative -top-20">

@@ -52,7 +52,6 @@ const Header: React.FC = () => {
     const observer = new window.IntersectionObserver(scrollHandler, {
       root: document.body,
       rootMargin: '0px 0px -100% 0px',
-      threshold: 0,
     });
     if (headerRef.current) {
       observer.observe(headerRef.current);
