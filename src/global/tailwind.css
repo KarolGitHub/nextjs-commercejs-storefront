@@ -5,6 +5,7 @@
 body {
   @apply text-lg;
   @apply font-regular;
+  @apply bg-grad1;
   overscroll-behavior: none;
 }
 
@@ -58,6 +59,16 @@ ol {
 .bg-transition {
   @apply bg-white border-black transition-colors duration-200 ease-in-out delay-200 !important;
 }
+.bg-grad1 {
+  background: linear-gradient(270deg, #f4fafb, #e7e7e7);
+}
+.bg-grad2 {
+  background: radial-gradient(
+    circle farthest-corner at 22.4% 21.7%,
+    #f4fafb 0%,
+    #93c5fd 100.2%
+  );
+}
 
 .button {
   @apply flex items-center text-center bg-transparent border border-white w-max py-3 px-3 text-white;
@@ -93,4 +104,9 @@ ol {
 .swiper-content li {
   @apply text-white;
   text-shadow: 0 0 6px #000;
+}
+
+.img-min-max {
+  min-height: 12rem;
+  max-height: 24rem;
 }

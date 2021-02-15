@@ -72,7 +72,7 @@ const HeroSection: React.FC = () => {
     return filterFeaturedProducts().map((product: Product) => (
       <div key={product.id}>
         <div
-          className="relative bg-cover bg-center min-h-3/4 flex flex-col py-5"
+          className="relative bg-cover bg-center bg-no-repeat min-h-3/4 flex flex-col py-5"
           style={{
             backgroundImage: `url("${product.media.source}")`,
           }}>

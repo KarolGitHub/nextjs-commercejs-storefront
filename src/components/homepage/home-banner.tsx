@@ -4,7 +4,6 @@ import Swiper from 'react-id-swiper';
 
 const swiperParams = {
   effect: 'coverflow',
-  slidesPerView: 1,
   centeredSlides: true,
   spaceBetween: 10,
   speed: 1000,
@@ -29,10 +28,10 @@ const quotes = [
 
 const HomeBanner: React.FC = () => {
   return (
-    <div className="p-5">
+    <div className="p-5 mx-auto max-w-4xl">
       <Swiper {...swiperParams}>
         {quotes.map((quote: string, index: number) => (
-          <div key={`quote${index}`} className="mx-auto max-w-4xl text-center">
+          <div key={`quote${index}`} className="text-center">
             <p className="text-xl sm:text-2xl md:text-3xl uppercase mb-2">
               {quote}
             </p>

@@ -8,18 +8,22 @@ const CategoryBanner: React.FC = () => {
   categories?.filter((category: Category) => category.link);
 
   return (
-    <div>
-      <p>Categories</p>
-      <div>
+    <div className="bg-grad2 text-center p-12">
+      <p className="my-3 text-4xl font-bold">Categories</p>
+      <div className="grid  grid-cols-2/12-24 lg:grid-cols-4/12-24 gap-4 max-w-7xl mx-auto justify-center">
         {categories?.map(({ name, image, link }: Category, index: number) => (
-          <div key={`category-item-${index}`}>
+          <div
+            key={`category-item-${index}`}
+            className="shadow-inset transform hover:shadow-inner hover:opacity-65 hover:scale-110 active:scale-90 transition-all duration-500 rounded-xl">
             <Link href={link}>
-              <div
-                style={{
-                  background: `url("${image}") center center/cover`,
-                }}>
-                {name}
-              </div>
+              <a>
+                <div
+                  className="img-min-max"
+                  style={{
+                    background: `url("${image}") center center/contain no-repeat`,
+                  }}></div>
+                <p className="text-3xl font-header">{name}</p>
+              </a>
             </Link>
           </div>
         ))}
